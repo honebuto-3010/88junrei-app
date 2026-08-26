@@ -1,0 +1,150 @@
+@charset "utf-8";
+.card-brush {
+    background: rgba(10, 40, 80, 0.55); /* 深い藍色 */
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+    max-width: 420px;
+    margin: 25px auto;
+    font-family: 'Yuji Syuku', serif;
+    color: #fff;
+}
+
+/* 写真 */
+.card-brush img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    border: 2px solid rgba(255,255,255,0.3);
+}
+
+/* 札所番号（朱色） */
+.card-number {
+    font-size: 15px;
+    color: #ff4d4d;
+    margin-bottom: 6px;
+}
+
+/* タイトル（筆文字＋フリガナ） */
+.card-title {
+    font-size: 28px;
+    color: #ffffff;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0 0 10px 0;
+}
+
+/* フリガナ */
+.card-title ruby rt {
+    font-size: 12px;
+    color: #dcdcdc;
+    letter-spacing: 1px;
+}
+
+/* 住所 */
+.card-address {
+    font-size: 13px;
+    color: #e0e0e0;
+    margin-bottom: 12px;
+}
+
+/* 情報ボックス（補足情報） */
+.info-box {
+    background: rgba(255,255,255,0.08);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.info-box strong {
+    color: #ffdddd; /* 薄い朱色で強調 */
+}
+
+/* 地図リンク */
+.map-link a {
+    font-size: 12px;
+    color: #dcdcdc;
+    text-decoration: underline;
+    opacity: 0.9;
+}
+
+/* 説明文 */
+.card-desc {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #cccccc;
+    margin: 0;
+}
+
+.back-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    position: relative;
+    z-index: 9999;
+}
+
+/* ホームに戻るボタン */
+.btn-back-home,
+.btn-back-list {
+    background: #f5f5f7; /* Apple風の柔らかいグレー */
+    color: #333;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'Yuji Syuku', serif;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* ホバー */
+.btn-back-home:hover,
+.btn-back-list:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+#screen-detail {
+    position: relative;
+    z-index: 9999;
+}
+
+
+
+/* スマホ向け */
+@media (max-width: 480px) {
+    .back-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+/* ------------------------------ */
+/* 📱 レスポンシブ（スマホ向け） */
+/* ------------------------------ */
+@media (max-width: 480px) {
+
+    .card-brush {
+        padding: 16px;
+        border-radius: 10px;
+    }
+
+    .card-title {
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+
+    .info-box {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .card-desc {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+}

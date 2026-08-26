@@ -1,0 +1,226 @@
+@charset "utf-8";
+/* 横スクロール防止 */
+html, body {
+    overflow-x: hidden;
+}
+
+/* 全体のボックス調整 */
+* {
+    box-sizing: border-box;
+}
+
+/* ===========================
+   スマホヘッダー（写真の上に重ねる）
+   =========================== */
+.mobile-header {
+    width: 100%;
+    height: 80px;
+    background-image: url('../images/yamabon-koyasan-temple-g7fa865797_640.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+
+    position: relative;
+    z-index: 10;
+}
+
+/* 左上の丸アイコン */
+.mobile-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    background: #7b0909;
+    color: #cfbdbd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+/* タイトル */
+.mobile-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+/* ハンバーガーメニューの中身（完全版） */
+.menu-content {
+    display: none;
+    position: fixed;      /* 画面右上に固定 */
+    top: 80px;            /* ヘッダーの高さに合わせる */
+    right: 0;
+    width: 220px;
+    background: #ffffff;  /* 完全な白背景（透け防止） */
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    padding: 0;
+    z-index: 9999;        /* 写真より前に出す */
+}
+
+/* メニュー内のリンク */
+.menu-content a {
+    display: block;
+    padding: 14px 18px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    background: #fff;     /* 背景透け防止 */
+}
+
+/* ホバー時 */
+.menu-content a:hover {
+    background: #f5f5f5;
+}
+
+/* ハンバーガー */
+.hamburger {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 4px;
+    background: #fff;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 10px; }
+.hamburger span:nth-child(3) { top: 20px; }
+
+/* × の形 */
+.hamburger.active span:nth-child(1) {
+    top: 10px;
+    transform: rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    top: 10px;
+    transform: rotate(-45deg);
+}
+
+/* ===========================
+   ヒーロー写真（上部全体）
+   =========================== */
+.hero-photo {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/* ナビの下に続く写真 */
+.hero-image {
+    width: 100%;
+    height: calc(70vh - 80px);
+    background-image:url('../images/yamabon-koyasan-temple-g7fa865797_640.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.92);
+    position: relative;
+}
+
+/* 和紙レイヤー */
+.washi-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(0.5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 縦書きタイトル */
+.hero-title {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: 'Yuji Syuku', serif;
+    font-size: 1.4rem;
+    line-height: 2.1;
+    letter-spacing: 0.15em;
+    color: #c80000;
+    filter: contrast(1.15) brightness(1.05);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ===========================
+   導入文
+   =========================== */
+.intro-section {
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    background: #e8f3ff;
+    background-image: radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px);
+    background-size: 6px 6px;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #444;
+}
+
+/* ===========================
+   地図
+   =========================== */
+.map-section {
+    padding: 2rem 1.5rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.map-container {
+    width: 100%;
+    height: 260px;
+    background: #f7f7f7;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* PC向け */
+@media (min-width: 768px) {
+    .map-container {
+        height: 340px;
+    }
+}
