@@ -43,28 +43,28 @@ html, body {
     font-size: 12px;
 }
 
-/* タイトル */
+/* タイトル（白背景なので黒文字に変更推奨） */
 .mobile-title {
     font-size: 20px;
     font-weight: bold;
-    color: #fff;
+    color: #333;
 }
-/* ハンバーガーメニューの中身（完全版） */
+
+/* ハンバーガーメニューの中身 */
 .menu-content {
     display: none;
-    position: fixed;      /* 画面右上に固定 */
-    top: 80px;            /* ヘッダーの高さに合わせる */
+    position: fixed;
+    top: 80px;
     right: 0;
     width: 220px;
-    background: #ffffff;  /* 完全な白背景（透け防止） */
+    background: #ffffff;
     border-left: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
     box-shadow: 0 2px 6px rgba(0,0,0,0.25);
     padding: 0;
-    z-index: 9999;        /* 写真より前に出す */
+    z-index: 9999;
 }
 
-/* メニュー内のリンク */
 .menu-content a {
     display: block;
     padding: 14px 18px;
@@ -72,10 +72,9 @@ html, body {
     color: #333;
     text-decoration: none;
     font-size: 18px;
-    background: #fff;     /* 背景透け防止 */
+    background: #fff;
 }
 
-/* ホバー時 */
 .menu-content a:hover {
     background: #f5f5f5;
 }
@@ -97,7 +96,7 @@ html, body {
     left: 0;
     width: 30px;
     height: 4px;
-    background: #c80000;
+    background: #c80000; /* 赤線 */
     border-radius: 2px;
     transition: 0.3s;
 }
@@ -106,7 +105,6 @@ html, body {
 .hamburger span:nth-child(2) { top: 10px; }
 .hamburger span:nth-child(3) { top: 20px; }
 
-/* × の形 */
 .hamburger.active span:nth-child(1) {
     top: 10px;
     transform: rotate(45deg);
@@ -120,7 +118,7 @@ html, body {
 }
 
 /* ===========================
-   ヒーロー写真（上部全体）
+   ヒーロー写真（背景を完全に白に）
    =========================== */
 .hero-photo {
     width: 100%;
@@ -130,16 +128,15 @@ html, body {
     padding: 0;
 }
 
-/* ナビの下に続く写真 */
 .hero-image {
     width: 100%;
     height: calc(70vh - 80px);
-    background-color: #fff;
-    filter: brightness(0.92);
+    background-color: #fff; /* ← 完全な白背景 */
+    filter: brightness(1);  /* ← 白なので明るさ補正不要 */
     position: relative;
 }
 
-/* 和紙レイヤー */
+/* 和紙レイヤー（完全透明） */
 .washi-overlay {
     position: absolute;
     inset: 0;
@@ -150,7 +147,7 @@ html, body {
     align-items: center;
 }
 
-/* 縦書きタイトル */
+/* 縦書きタイトル（白背景） */
 .hero-title {
     writing-mode: vertical-rl;
     text-orientation: upright;
@@ -158,10 +155,11 @@ html, body {
     font-size: 1.4rem;
     line-height: 2.1;
     letter-spacing: 0.15em;
-    background-color: #fff;
+    background-color: #fff; /* ← 白背景 */
+    color: tomato;
     filter: contrast(1.15) brightness(1.05);
     text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
-    color: tomato;
+
     position: absolute;
     top: 50%;
     left: 50%;
@@ -174,9 +172,7 @@ html, body {
 .intro-section {
     padding: 2.5rem 1.5rem;
     text-align: center;
-    background: #e8f3ff;
-    background-color: #fff;
-    background-size: 6px 6px;
+    background-color: #fff; /* ← 白背景 */
     border-radius: 8px;
     margin-top: 1rem;
 }
