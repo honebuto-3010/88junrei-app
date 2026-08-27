@@ -89,7 +89,7 @@ html, body {
     width: 30px;
     height: 24px;
     cursor: pointer;
-    z-index: 9999;
+    z-index: 10;
 }
 
 .hamburger span {
