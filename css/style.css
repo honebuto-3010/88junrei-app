@@ -134,10 +134,7 @@ html, body {
 .hero-image {
     width: 100%;
     height: calc(70vh - 80px);
-    background-image:url('../images/yamabon-koyasan-temple-g7fa865797_640.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #333;
     filter: brightness(0.92);
     position: relative;
 }
