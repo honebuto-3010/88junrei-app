@@ -1,14 +1,14 @@
 const CACHE_NAME = "v1";
 
-// フォルダごとのページ数
-const PAGE_COUNT = {
-  Awa: 23,
-  Tosa: 16,
-  Iyo: 26,
-  Sanuki: 23
+// 各地域の番号レンジ
+const PAGE_RANGE = {
+  Awa: [1, 23],
+  Tosa: [24, 39],
+  Iyo: [40, 65],
+  Sanuki: [66, 88]
 };
 
-// 固定ファイル（相対パスに修正）
+// 固定ファイル
 const STATIC_FILES = [
   "index.html",
   "script.js",
@@ -17,16 +17,19 @@ const STATIC_FILES = [
   "kagawa-icon.html",
   "ehime-icon.html",
   "kochi-icon.html",
+
+  // 画像
+  "134843608.jpg"
 ];
 
-// フォルダごとの連番ページを生成（先頭の / を削除）
+// 番号からファイル名を生成（番号_寺名.html）
 function generatePageList() {
   const pages = [];
 
-  Object.entries(PAGE_COUNT).forEach(([folder, count]) => {
-    for (let i = 1; i <= count; i++) {
-      const num = String(i).padStart(2, "0");
-      pages.push(`${folder}/${num}.html`);
+  Object.entries(PAGE_RANGE).forEach(([folder, [start, end]]) => {
+    for (let num = start; num <= end; num++) {
+      const padded = String(num).padStart(2, "0");
+      pages.push(`${folder}/${padded}.html`);
     }
   });
 
@@ -42,7 +45,6 @@ self.addEventListener("install", event => {
   );
 });
 
-// キャッシュ優先（オフライン対応）
 self.addEventListener("fetch", event => {
   event.respondWith(
     caches.match(event.request).then(response => {
@@ -51,7 +53,6 @@ self.addEventListener("fetch", event => {
   );
 });
 
-// 古いキャッシュ削除
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys().then(keys =>
@@ -63,3 +64,4 @@ self.addEventListener("activate", event => {
     )
   );
 });
+
