@@ -157,9 +157,6 @@ html, body {
     letter-spacing: 0.15em;
     background-color: #fff; /* ← 白背景 */
     color: tomato;
-    filter: contrast(1.15) brightness(1.05);
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
-
     position: absolute;
     top: 50%;
     left: 50%;
