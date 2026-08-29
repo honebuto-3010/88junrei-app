@@ -107,3 +107,8 @@
 .kochi-theme {
     background-color: rgba(40, 80, 50, 0.25);
 }
+@media (max-width: 480px) {
+    .temple-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
