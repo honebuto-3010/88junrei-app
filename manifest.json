@@ -5,11 +5,5 @@
   "display": "standalone",
   "background_color": "#f5f2e8",
   "theme_color": "#4a4a4a",
-  "icons": [
-    {
-      "src": "images/icon-junrei.png",
-      "sizes": "180x180",
-      "type": "image/png"
-    }
-  ]
+
 }
