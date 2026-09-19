@@ -1,0 +1,213 @@
+@charset "utf-8";
+
+/* ===========================
+   札所カード（フル幅＋黒ガラス＋和紙）
+   =========================== */
+
+.temple-card {
+    width: 100%;                 /* ★画面いっぱい */         /* ★画面全体の高さ */
+    box-sizing: border-box;
+    padding: 2rem;
+    background: rgba(0,0,0,0.60); /* 濃い黒ガラス */
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 10px;            /* フルスクリーンなので角丸なし */
+    position: relative;
+}
+
+.temple-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("../images/washi.png");
+    opacity: 0.18;
+    pointer-events: none;
+}
+
+.temple-number {
+    font-size: 1rem;
+    color: #ffd54f;
+    margin-bottom: 0.4rem;
+}
+
+.temple-title {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 2.0rem;
+    color: rgba(255,255,255,0.95);
+    margin: 0.4rem 0 1.4rem;
+}
+
+.temple-title rt {
+    line-height: 1.1;
+}
+
+/* 札所名の英語表記（右寄せ） */
+.title-en {
+    display: block;
+    text-align: left;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.75);
+    margin-top: 2px;
+    letter-spacing: 0.03em;
+    font-family: "Inter", sans-serif; /* 英語が美しく見える */
+}
+
+/* ラベルの英語表記（右寄せ） */
+.label-en {
+    display: block;
+    text-align: right;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.70);
+    margin-top: 2px;
+    letter-spacing: 0.02em;
+}
+.temple-info p {
+    margin: 0.6rem 0;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.95);
+    display: flex;
+    gap: 0.4rem;
+    font-family: "Noto Serif JP", serif;
+}
+
+.temple-info span {
+    color: rgba(255,255,255,0.95);
+    min-width: 110px; /* ラベル幅を揃えて読みやすく */
+    display: inline-block;
+}
+
+.map-button {
+    display: inline-block;
+    margin-top: 1.4rem;
+    padding: 14px 20px;
+    background: #0A84FF; /* あなたの好みの青 */
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(10,132,255,0.4);
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.map-button:hover {
+    background: #0c6cd9;
+}
+
+.map-link {
+    color: #4da3ff;
+    text-decoration: none;
+}
+
+.map-link:hover {
+    text-decoration: underline;
+}
+
+/* ===========================
+   戻るボタン（完全統一）
+   =========================== */
+/* ===========================
+   戻るボタン（強制統一版）
+   =========================== */
+
+.back-buttons {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    gap: 1rem;
+    box-sizing: border-box;
+}
+
+.btn-back-home,
+.btn-back-list {
+    margin: 0;
+    margin-top: 30px;
+    width: 100%;                 /* ★横幅を完全固定 */
+    padding: 14px;               /* ★高さも完全固定 */
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 10px;
+    color: rgba(255,255,255,0.95);
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-align: center;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    position: relative;
+    box-sizing: border-box;      /* ★内部の余白でサイズが変わらない */
+    flex: 1 1 0;                 /* ★必ず同じ幅で割り当てられる */
+}
+
+.btn-back-home::after,
+.btn-back-list::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("../images/washi.png");
+    opacity: 0.12;
+    pointer-events: none;
+}
+
+.btn-back-home:hover,
+.btn-back-list:hover {
+    background: rgba(255,255,255,0.22);
+}
+
+
+@media (max-width: 768px) {
+    .temple-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* ★下から埋める */         /* 画面いっぱいに広げる（任意） */
+        padding-bottom: 2rem;      /* 下に余白を少し */
+        padding: 1.4rem;
+        min-height: 65vh;
+    }
+    .temple-title {
+        font-size: 1.4rem;
+    }
+    .temple-info p {
+        font-size: 0.9rem;
+    }
+      /* タイトルの日本語・英語を読みやすく */
+    .temple-title {
+        font-size: 1.4rem; /* 少し小さくして詰まりを防ぐ */
+        line-height: 1.3;
+    }
+
+    .temple-title rt {
+        font-size: 0.8rem; /* ふりがなを小さくして圧迫感を減らす */
+        line-height: 1.1;
+    }
+
+    .title-en {
+        font-size: 0.95rem; /* 英語はむしろ少し大きくする */
+        margin-top: 6px;
+        line-height: 1.3;
+    }
+
+   /* 情報項目を縦方向にしっかり分離 */
+    .temple-info p {
+        display: block;
+        flex-direction: column; /* ← これが超重要 */
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.2rem;
+    }
+
+    /* 日本語の下に英語を置く */
+    .label-en {
+        display: block;       /* ← 英語を必ず改行させる */
+        text-align: left;     /* ← 左揃えにする */
+        margin-top: 6px;      /* ← 日本語との距離を確保 */
+        font-size: 0.95rem;   /* ← 英語を読みやすく */
+        line-height: 1.4;
+    }
+    .back-buttons button {
+    display: flex;
+    flex-direction: column; /* ← 日本語 → 英語を縦並びにする */
+    align-items: center;    /* ← 中央揃え（美しい） */
+    justify-content: center;
+}
+}

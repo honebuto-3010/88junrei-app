@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+/* 3列グリッド（安定版） */
+.temple-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+    padding: 24px;
+    justify-content: center;
+    justify-items: center; /* ← 各アイコンを中央に */
+}
+
+/* アイコン＋英語ラベルの外枠 */
+.temple-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  /* ← 縦方向の中央揃え（必要なら） */
+    gap: 8px; /* アイコンと英語ラベルの距離 */
+    cursor: pointer;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.25); /* 黒ガラス感 */
+    backdrop-filter: blur(6px);
+    width: 160px;
+}
+
+/* アイコン本体（日本語だけ） */
+.temple-icon {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    border: 0.7px solid rgba(255,255,255,0.30);
+    overflow: hidden;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255,255,255,0.06),
+        rgba(255,255,255,0.01)
+    );
+    transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.temple-icon:hover {
+    border-color: rgba(255,255,255,0.55);
+    background: rgba(255,255,255,0.06);
+}
+
+/* 黒ガラスラベル（日本語） */
+.goshuin-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    background: rgba(0,0,0,0.55);
+    padding: 6px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.35);
+    backdrop-filter: blur(2.5px);
+}
+
+/* 日本語（縦書き） */
+.goshuin-left,
+.goshuin-right {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: 'Yuji Syuku', serif;
+    line-height: 1.6;
+    text-align: center;
+    color: rgba(255,255,255,0.95);
+}
+
+.goshuin-right {
+    color: rgba(255,255,255,0.75);
+}
+
+/* 英語ラベル（アイコンの下に別枠） */
+.temple-en {
+    background: rgba(0,0,0,0.55);
+    margin-top: 8px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.35);
+    backdrop-filter: blur(2px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    width: 150px;
+    text-align: center;
+}
+
+/* 英語（横書き） */
+.temple-en-name {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.85);
+    white-space: nowrap;
+}
+
+.temple-en-number {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.65);
+    white-space: nowrap;
+}
+
+/* 一覧全体の背景（黒ガラス） */
+.temple-grid-wrapper {
+    text-align: center;
+    background: rgba(0,0,0,0.15);
+    padding: 28px;
+    backdrop-filter: blur(3px);
+}
+
+/* 戻るボタン */
+.btn-back-home {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 12px auto; /* ← 中央寄せの決定打 */
+    padding: 8px 16px;
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 8px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.95);
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-back-home:hover {
+    background: rgba(255,255,255,0.18);
+    border-color: rgba(255,255,255,0.55);
+    transform: translateY(-2px);
+}
+
+.btn-back-home .label-en {
+    font-size: 12px;
+    color: rgba(255,255,255,0.75);
+    margin-top: 2px;
+}
+/* 県別テーマは黒世界観に統一 */
+.ai-theme,
+.kagawa-theme,
+.ehime-theme,
+.kochi-theme {
+    background-color: transparent;
+}

@@ -1,0 +1,199 @@
+@charset "utf-8";
+
+/* ===========================
+   全体背景（ホームと統一）
+   =========================== */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/photo-1620374476350-b7c1eabcc131.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: rgba(255,255,255,0.92);
+    font-family: "Yuji Syuku", serif;
+}
+
+/* ===========================
+   上部タイトル帯（黒ガラス濃いめ＋和紙）
+   =========================== */
+.mag-header {
+    width: 100%;
+    padding: 1.5rem 1rem;
+    background: rgba(0,0,0,0.65); /* ★濃くした黒ガラス */
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.18);
+    position: relative;
+    text-align: center;
+}
+
+.mag-header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("images/washi.png");
+    opacity: 0.18; /* 和紙濃いめ */
+    pointer-events: none;
+}
+
+.mag-header h2 {
+    margin: 0;
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.95);
+}
+
+/* ===========================
+   記事セクション（黒ガラス濃いめ）
+   =========================== */
+.mag-article {
+    margin: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(0,0,0,0.55); /* ★濃い黒ガラス */
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    position: relative;
+}
+
+.mag-article::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("images/washi.png");
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+/* ===========================
+   見出し（注意帯：黒ガラス＋赤アクセント）
+   =========================== */
+.ng-title {
+    font-size: 1.2rem;
+    margin: 1.5rem 0 1rem;
+    padding: 0.9rem 1rem;
+    background: rgba(0,0,0,0.65); /* ★濃い黒ガラス */
+    border-left: 4px solid #ff6b6b; /* 赤アクセント */
+    border-radius: 10px;
+    letter-spacing: 0.05em;
+    position: relative;
+}
+
+.ng-title::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("images/washi.png");
+    opacity: 0.18;
+    pointer-events: none;
+}
+
+/* 「注意」ラベル（赤） */
+.ng-title span {
+    background: rgba(255, 80, 80, 0.25);
+    color: #ff6b6b;
+    padding: 4px 8px;
+    border-radius: 6px;
+    margin-right: 6px;
+    font-size: 0.9rem;
+}
+
+/* ===========================
+   NGアイコンとテキスト（黒ガラス濃いめ）
+   =========================== */
+.mag-text {
+    line-height: 1.8;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: rgba(255,255,255,0.88);
+    position: relative;
+    padding: 1rem 1.2rem 1rem 2.2rem;
+    background: rgba(0,0,0,0.55); /* ★濃い黒ガラス */
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+}
+
+.mag-text::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("images/washi.png");
+    opacity: 0.12;
+    pointer-events: none;
+}
+
+/* NGアイコン（黄色強め） */
+.ng-icon {
+    position: absolute;
+    left: 0.6rem;
+    top: 0.8rem;
+    font-size: 1.3rem;
+    color: #ffd54f; /* ★強めの黄色 */
+}
+
+/* 強調テキスト（赤） */
+.mag-text strong {
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+/* ===========================
+   まとめセクション
+   =========================== */
+.mag-article:last-child {
+    margin-bottom: 3rem;
+}
+
+/* ===========================
+   ホームへ戻るボタン（黒ガラス＋和紙）
+   =========================== */
+.btn-back-home {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 14px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 10px;
+    color: rgba(255,255,255,0.95);
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-align: center;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    position: relative;
+}
+
+.btn-back-home::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("images/washi.png");
+    opacity: 0.12;
+    pointer-events: none;
+}
+
+.btn-back-home:hover {
+    background: rgba(255,255,255,0.22);
+}
+
+/* ===========================
+   スマホ調整
+   =========================== */
+@media (max-width: 768px) {
+    .mag-header h2 {
+        font-size: 1.3rem;
+    }
+
+    .mag-article {
+        margin: 1rem;
+        padding: 1.2rem;
+    }
+
+    .ng-title {
+        font-size: 1.1rem;
+    }
+
+    .mag-text {
+        font-size: 0.95rem;
+    }
+}

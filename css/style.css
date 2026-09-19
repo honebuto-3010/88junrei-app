@@ -1,0 +1,266 @@
+@charset "utf-8";
+
+/* 横スクロール防止 */
+html, body { overflow-x: hidden; }
+* { box-sizing: border-box; }
+
+body {
+    background-image: url("../images/photo-1620374476350-b7c1eabcc131.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* ===========================
+   PC用ヘッダー（ハンバーガー）
+   =========================== */
+.mobile-header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 10;
+}
+
+.mobile-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    background: #ffffff;
+    color: #1c1c1e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.mobile-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* ハンバーガー */
+.hamburger {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 4px;
+    background: #fff;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 10px; }
+.hamburger span:nth-child(3) { top: 20px; }
+
+/* PC用メニュー（ハンバーガー展開） */
+.menu-content.pc-nav {
+    display: none;
+    position: fixed;
+    top: 80px;
+    right: 0;
+    width: 220px;
+    background: #ffffff;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    padding: 0;
+    z-index: 9999;
+}
+
+.menu-content.pc-nav a {
+    display: block;
+    padding: 14px 18px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    background: #fff;
+    cursor: pointer;
+}
+
+/* ===========================
+   スマホ専用 下部ナビ
+   =========================== */
+.mobile-bottom-nav {
+    display: none; /* PCでは非表示 */
+}
+
+@media (max-width: 768px) {
+
+    /* PC用ハンバーガーを消す */
+    .hamburger { display: none; }
+
+    /* PC用メニューを消す */
+    .pc-nav { display: none !important; }
+
+    /* スマホ用ナビを表示 */
+    .mobile-bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        height: 60px;
+        background: rgba(0,0,0,0.45);
+        backdrop-filter: blur(4px);
+
+        justify-content: space-between;
+        align-items: center;
+
+        border-top: 1px solid rgba(255,255,255,0.15);
+        z-index: 9999;
+    }
+
+    .mobile-bottom-nav a {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 60px;
+        font-size: 14px;
+        color: rgba(255,255,255,0.95);
+        text-decoration: none;
+
+        border-right: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .mobile-bottom-nav a:last-child {
+        border-right: none;
+    }
+}
+
+/* ===========================
+   ヒーロー写真
+   =========================== */
+.hero-photo {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+}
+
+.hero-image {
+    width: 100%;
+    height: calc(70vh - 80px);
+    filter: contrast(1.15) brightness(0.95);
+    position: relative;
+}
+
+.hero-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("images/washi.png");
+    opacity: 0.12;
+    pointer-events: none;
+}
+
+.washi-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(0.5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-title {
+    margin-left: 24px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: 'Yuji Syuku', serif;
+    font-size: 1.4rem;
+    line-height: 1.8;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.95);
+    filter: contrast(1.15) brightness(1.05);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+}
+
+/* ===========================
+   地図
+   =========================== */
+.map-section {
+    padding: 2rem 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    background: transparent;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("images/washi.png");
+    opacity: 0.18;
+    pointer-events: none;
+}
+
+.map-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(40%) brightness(1.05);
+}
+
+.map-title {
+    color: rgba(255,255,255,0.92);
+}
+
+@media (min-width: 768px) {
+    .map-container { height: 340px; }
+}
+
+.menu-content a,
+.mobile-bottom-nav a {
+    display: flex;
+    flex-direction: column; /* ← 日本語 → 英語を縦並びにする */
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 0;
+    color: rgba(255,255,255,0.95); /* 日本語は強めの白 */
+}
+
+.label-en {
+    display: block;
+    margin-top: 3px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.65); /* 英語は淡い白で控えめ */
+}
