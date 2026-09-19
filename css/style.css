@@ -258,10 +258,19 @@ body {
     color: rgba(255,255,255,0.95); /* 日本語は強めの白 */
 }
 
+.map-title {
+    writing-mode: horizontal-tb; /* ← これが決定打 */
+    text-orientation: mixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .label-en {
     writing-mode: horizontal-tb;
     display: inline-block;
-    margin-top: 3px;
+    margin-top: 6px;
     font-size: 0.8rem;
     color: rgba(255,255,255,0.65); /* 英語は淡い白で控えめ */
 }
+
