@@ -6,7 +6,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url("../photo-1620374476350-b7c1eabcc131.jpg");
+    background-image: url("../images/photo-1620374476350-b7c1eabcc131.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -41,6 +41,15 @@ body {
     font-size: 1.6rem;
     letter-spacing: 0.05em;
     color: rgba(255,255,255,0.95);
+}
+
+.mag-header h2 .label-en {
+    display: block;
+    margin-top: 10px;
+    font-family: "EB Garamond", "Noto Serif", serif;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.80);
+    letter-spacing: 0.04em;
 }
 
 /* ===========================
@@ -98,6 +107,24 @@ body {
     font-size: 0.9rem;
 }
 
+.ng-title .label-en {
+    display: block;
+    margin-top: 6px;
+    font-family: "Noto Serif", "EB Garamond", serif;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+    font-weight: normal;
+}
+
+/* 英語フォント（記事・見出し・本文の英語部分） */
+.label-en {
+    font-family: "EB Garamond", "Noto Serif", serif;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+}
+
 /* ===========================
    NGアイコンとテキスト（黒ガラス濃いめ）
    =========================== */
@@ -120,6 +147,14 @@ body {
     background: url("images/washi.png");
     opacity: 0.12;
     pointer-events: none;
+}
+
+.mag-text .label-en {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.70);
+    line-height: 1.6;
 }
 
 /* NGアイコン（黄色強め） */
@@ -197,3 +232,4 @@ body {
         font-size: 0.95rem;
     }
 }
+
