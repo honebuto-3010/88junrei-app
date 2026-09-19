@@ -1,44 +1,25 @@
-const CACHE_NAME = "v1";
+const CACHE_NAME = "v2";
 
-// フォルダごとのページ数
-const PAGE_COUNT = {
-  Awa: 23,
-  Tosa: 16,
-  Iyo: 26,
-  Sanuki: 23
-};
-
-// 固定ファイル（相対パスに修正）
+// オフラインでも使えるようにキャッシュするファイル一覧
 const STATIC_FILES = [
   "index.html",
-  "script.js",
-  "css/styles.css",
-  "manner.html",
+  "style.css",
+  "tokushima.css",
   "tokushima-icon.html",
   "kagawa-icon.html",
   "ehime-icon.html",
   "kochi-icon.html",
+  "manner.html",  // ← ナビメニューにあるので必須
+  "manifest.json",
+  "overview-map-01.png",
+  "photo-1620374476350-b7c1eabcc131.jpg"
 ];
 
-// フォルダごとの連番ページを生成（先頭の / を削除）
-function generatePageList() {
-  const pages = [];
-
-  Object.entries(PAGE_COUNT).forEach(([folder, count]) => {
-    for (let i = 1; i <= count; i++) {
-      const num = String(i).padStart(2, "0");
-      pages.push(`${folder}/${num}.html`);
-    }
-  });
-
-  return pages;
-}
-
+// インストール時にキャッシュ登録
 self.addEventListener("install", event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
-      const pages = generatePageList();
-      return cache.addAll([...STATIC_FILES, ...pages]);
+      return cache.addAll(STATIC_FILES);
     })
   );
 });
@@ -58,9 +39,12 @@ self.addEventListener("activate", event => {
     caches.keys().then(keys =>
       Promise.all(
         keys.map(key => {
-          if (key !== CACHE_NAME) return caches.delete(key);
+          if (key !== CACHE_NAME) {
+            return caches.delete(key);
+          }
         })
       )
     )
   );
 });
+
