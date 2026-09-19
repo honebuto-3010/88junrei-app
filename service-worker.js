@@ -13,6 +13,7 @@ const STATIC_FILES = [
   "index.html",
   "script.js",
   "css/styles.css",
+  "manner.html",
   "tokushima-icon.html",
   "kagawa-icon.html",
   "ehime-icon.html",
