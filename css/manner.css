@@ -196,6 +196,10 @@ body {
     cursor: pointer;
     backdrop-filter: blur(4px);
     position: relative;
+    display: flex;
+    flex-direction: column; /* ← 日本語 → 英語を縦並びに */
+    align-items: center;    /* ← 中央揃え */
+    gap: 4px;      
 }
 
 .btn-back-home::after {
