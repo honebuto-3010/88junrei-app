@@ -5,7 +5,7 @@ html, body { overflow-x: hidden; }
 * { box-sizing: border-box; }
 
 body {
-    background-image: url("photo-1546349851-64285be8e9fa.jpg");
+    background-image: url("../photo-1546349851-64285be8e9fa.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
