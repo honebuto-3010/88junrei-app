@@ -104,3 +104,21 @@ document.addEventListener("DOMContentLoaded", () => {
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("service-worker.js");
 }
+
+// ===============================
+// 地図モーダルを開く
+// ===============================
+document.getElementById("show-map-btn").addEventListener("click", function () {
+    const modal = document.querySelector(".fullscreen-map");
+    modal.style.display = "flex";   // モーダルを表示
+    document.body.style.overflow = "hidden"; // 背景スクロール防止
+});
+
+// ===============================
+// 地図モーダルを閉じる
+// ===============================
+document.getElementById("close-map-btn").addEventListener("click", function () {
+    const modal = document.querySelector(".fullscreen-map");
+    modal.style.display = "none";   // モーダルを非表示
+    document.body.style.overflow = ""; // スクロール解除
+});
