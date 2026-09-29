@@ -5,10 +5,10 @@ html, body { overflow-x: hidden; }
 * { box-sizing: border-box; }
 
 body {
-    background-image: url("../photo-1546349851-64285be8e9fa.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-image: url("../istockphoto-165739209-612x612.jpg");
+    background-repeat: repeat;        /* ★繰り返す */
+    background-size: auto;            /* ★元画像のサイズのまま */
+    background-position: top left;    
 }
 
 /* ===========================
