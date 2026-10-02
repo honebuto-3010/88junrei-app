@@ -383,6 +383,28 @@ body {
     }
 }
 
+/* iPad Pro（1024〜1366px）でもスマホと同じナビ配置にする */
+@media (min-width: 1024px) and (max-width: 1366px) {
+
+    .mobile-bottom-nav {
+        justify-content: space-between; /* space-around → space-between */
+        padding: 12px 0;
+    }
+
+    .mobile-bottom-nav .nav-item {
+        width: auto;   /* 25%を解除 */
+        flex: 1;       /* 均等割りにする */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mobile-bottom-nav .nav-icon {
+        width: 36px;   /* タブレットでは少し大きくすると中央に見える */
+        height: 36px;
+    }
+}
+
 /* ===========================
    フルスクリーン地図モーダル
    =========================== */
