@@ -13,6 +13,9 @@ const STATIC_FILES = [
   "manifest.json",
   "overview-map-01.png",
   "photo-1620374476350-b7c1eabcc131.jpg"
+  "new88-icon.png",
+  "88-icon-192.png",
+  "88-icon-512.png"
 ];
 
 // インストール時にキャッシュ登録
