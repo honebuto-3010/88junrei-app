@@ -55,7 +55,7 @@
 /* ラベルの英語表記（右寄せ） */
 .label-en {
     display: block;
-    text-align: right;
+    text-align: center;
     font-size: 0.85rem;
     color: rgba(255,255,255,0.70);
     margin-top: 2px;
