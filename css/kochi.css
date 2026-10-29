@@ -154,7 +154,10 @@
     background: rgba(255,255,255,0.22);
 }
 
-
+.btn-back-list ,
+label-en {
+   texy-align: center;
+}
 @media (max-width: 768px) {
     .temple-card {
         display: flex;
