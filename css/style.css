@@ -5,7 +5,7 @@ html, body { overflow-x: hidden; }
 * { box-sizing: border-box; }
 
 body {
-    background-image: url("../istockphoto-165739209-612x612.jpg");
+    background-image: url("../istockphoto-2227618858-612x612.jpg");
     background-repeat: repeat;        /* ★繰り返す */
     background-size: auto;            /* ★元画像のサイズのまま */
     background-position: center;    
