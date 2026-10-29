@@ -156,6 +156,7 @@
 
 .btn-back-list ,
 label-en {
+   display: block;
    text-align: center;
 }
 @media (max-width: 768px) {
