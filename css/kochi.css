@@ -156,7 +156,7 @@
 
 .btn-back-list ,
 label-en {
-   tex-align: center;
+   text-align: center;
 }
 @media (max-width: 768px) {
     .temple-card {
