@@ -123,7 +123,8 @@
     align-items: center;
     margin: 12px auto; /* ← 中央寄せの決定打 */
     padding: 8px 16px;
-    background: rgba(255,255,255,0.10);
+    background: rgba(0,0,0,0.60);
+    backdrop-filter: blur(8px);
     border: 1px solid rgba(255,255,255,0.35);
     border-radius: 8px;
     font-size: 14px;
