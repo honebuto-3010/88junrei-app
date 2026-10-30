@@ -125,7 +125,7 @@
     margin-top: 30px;
     width: 100%;                 /* ★横幅を完全固定 */
     padding: 14px;               /* ★高さも完全固定 */
-    background: rgba(255,255,255,0.15);
+    background: rgba(0,0,0,0.60);
     border: 1px solid rgba(255,255,255,0.25);
     border-radius: 10px;
     color: rgba(255,255,255,0.95);
@@ -133,7 +133,7 @@
     letter-spacing: 0.05em;
     text-align: center;
     cursor: pointer;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(8px);
     position: relative;
     box-sizing: border-box;      /* ★内部の余白でサイズが変わらない */
     flex: 1 1 0;                 /* ★必ず同じ幅で割り当てられる */
