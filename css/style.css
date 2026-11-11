@@ -6,9 +6,11 @@ html, body { overflow-x: hidden; }
 
 body {
     background-image: url("../istockphoto-2227618858-612x612.jpg");
-    background-repeat: repeat;        /* ★繰り返す */
-    background-size: auto;            /* ★元画像のサイズのまま */
-    background-position: center;    
+    background-repeat: no-repeat;        /* ★繰り返す */
+    background-size: cover;            /* ★元画像のサイズのまま */
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
 /* ===========================
