@@ -34,7 +34,7 @@ body {
     transform: translateY(-50%);
     width: 45px;
     height: 45px;
-    background: rgba(255, 255, 255, 0.35);
+    background: rgba(133, 4 ,4 ,0.35);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     color: rgba(255, 255, 255, 0.95);
