@@ -211,7 +211,7 @@ body {
     font-size: 1.4rem;
     line-height: 1.8;
     letter-spacing: 0.15em;
-    color: #333;
+    color: rgba(18, 22, 32, 1);
     filter: contrast(1.15) brightness(1.05);
     text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
     position: absolute;
