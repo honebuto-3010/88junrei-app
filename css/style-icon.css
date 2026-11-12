@@ -8,6 +8,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
+    overscroll-behavior: none;
 }
 /* 3列グリッド（安定版） */
 .temple-grid {
