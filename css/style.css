@@ -1,7 +1,9 @@
 @charset "utf-8";
 
 /* 横スクロール防止 */
-html, body { overflow-x: hidden; }
+html, body 
+{overscroll-behavior: none;}
+{ overflow-x: hidden; }
 * { box-sizing: border-box; }
 
 body {
