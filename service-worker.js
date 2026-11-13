@@ -12,7 +12,6 @@ const STATIC_FILES = [
   "manner.html",  // ← ナビメニューにあるので必須
   "manifest.json",
   "overview-map-01.png",
-  "photo-1620374476350-b7c1eabcc131.jpg"
   "180-icon.png",
   "192-icon.png",
   "512-icon.png"
