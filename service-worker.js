@@ -3,8 +3,8 @@ const CACHE_NAME = "v3";
 // オフラインでも使えるようにキャッシュするファイル一覧
 const STATIC_FILES = [
   "index.html",
-  "style.css",
-  "tokushima.css",
+  "css/style.css",
+  "css/tokushima.css",
   "tokushima-icon.html",
   "kagawa-icon.html",
   "ehime-icon.html",
