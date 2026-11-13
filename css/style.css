@@ -190,7 +190,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: url("images/washi.png");
+    background: #ffffff;
     opacity: 0.12;
     pointer-events: none;
 }
