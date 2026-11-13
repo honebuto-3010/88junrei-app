@@ -8,17 +8,17 @@
   "description": "四国八十八ヶ所を知る・巡礼地図を閲覧できるアプリ",
   "icons": [
     {
-      "src": "new88-icon.png",
+      "src": "180-icon.png",
       "sizes": "180x180",
       "type": "image/png"
     },
     {
-      "src": "88-icon-192.png",
+      "src": "190-icon.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "88-icon-512.png",
+      "src": "512-icon.png",
       "sizes": "512x512",
       "type": "image/png"
     }
