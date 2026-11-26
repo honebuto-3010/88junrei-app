@@ -3,179 +3,252 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="192-icon.png">
-    <link rel="apple-touch-icon" href="180-icon.png">
     <meta name="viewport" conten="width=device-width, initial-scale=1.0">
     <title>その作法と礼節</title>
-    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="css/manner.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600&family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<div class="mag-header">
-    <h2>
-        神社・寺院での NG 行動 ─ 知っておきたい参拝のタブー
-        <span class="label-en">NG Behaviors at Shrines and Temples — Important Etiquette to Know</span>
-    </h2>
-</div>
+    <div class="container">
 
-<section class="mag-article">
+        <!-- 1. ページタイトル（ヘッダー） -->
+        <header class="glass-card page-header">
+            <p class="sub-badge">MANNERS &amp; ETIQUETTE</p>
+            <h1 class="page-title">
+                神社・寺院での NG 行動
+                <span class="title-en">NG Behaviors at Shrines and Temples — Important Etiquette to Know</span>
+            </h1>
+        </header>
 
-    <!-- はじめに -->
-    <h3 class="ng-title">
-        <span>注意</span> はじめに ─ なぜ NG 行動を知る必要があるのか
-        <span class="label-en">Introduction — Why Understanding NG Behaviors Matters</span>
-    </h3>
+        <!-- 2. 縦1列メニューリスト（幅・高さ完全統一） -->
+        <main class="menu-list">
+            <!-- まず始めに -->
+            <button type="button" class="glass-card menu-card intro-card" data-modal="modal-intro">
+                <div class="menu-text">
+                    <span class="menu-jp">まず始めに ─ なぜ NG 行動を知る必要があるのか</span>
+                    <span class="menu-en">Introduction — Why Understanding NG Behaviors Matters</span>
+                </div>
+                <span class="arrow-icon">›</span>
+            </button>
 
-    <p class="mag-text ng">
-        <span class="ng-icon">⚠</span>
-        神社や寺院は、長い歴史の中で人々の祈りが積み重なってきた特別な場所である。
-        そのため、参拝者が知らず知らずのうちに「やってはいけない行動」をしてしまうと、
-        その場の空気を乱すだけでなく、他の参拝者の祈りを妨げてしまうこともある。
-        <span class="label-en">
-            Shrines and temples are sacred places where countless prayers have accumulated over centuries.
-            When visitors unknowingly engage in prohibited behaviors, it can disturb the atmosphere and disrupt the prayers of others.
-        </span>
-    </p>
+            <!-- 1. 共通のNG -->
+            <button type="button" class="glass-card menu-card" data-modal="modal-1">
+                <div class="menu-text">
+                    <span class="menu-jp"><span class="num">①</span> 神社・寺院 共通の NG 行動</span>
+                    <span class="menu-en">Common NG Behaviors at Shrines and Temples</span>
+                </div>
+                <span class="arrow-icon">›</span>
+            </button>
 
-    <!-- ① 神社・寺院 共通の NG 行動 -->
-    <h3 class="ng-title">
-        <span>注意</span> ① 神社・寺院 共通の NG 行動
-        <span class="label-en">Common NG Behaviors at Shrines and Temples</span>
-    </h3>
+            <!-- 2. 神社のNG -->
+            <button type="button" class="glass-card menu-card" data-modal="modal-2">
+                <div class="menu-text">
+                    <span class="menu-jp"><span class="num">②</span> 神社だけの NG 行動</span>
+                    <span class="menu-en">NG Behaviors Specific to Shinto Shrines</span>
+                </div>
+                <span class="arrow-icon">›</span>
+            </button>
 
-    <p class="mag-text ng">
-        <span class="ng-icon">⚠</span>
-        <strong>参道の真ん中を歩く</strong><br>
-        参道の中央は「正中」と呼ばれ、神仏が通る道とされる。参拝者は端を歩くのが基本。
-        <span class="label-en">
-            The center of the approach path, called “seichū,” is considered the route of deities.
-            Visitors should walk along the sides as a sign of respect.
-        </span>
-    </p>
+            <!-- 3. 寺院だけのNG -->
+            <button type="button" class="glass-card menu-card" data-modal="modal-3">
+                <div class="menu-text">
+                    <span class="menu-jp"><span class="num">③</span> 寺院だけの NG 行動</span>
+                    <span class="menu-en">NG Behaviors Specific to Buddhist Temples</span>
+                </div>
+                <span class="arrow-icon">›</span>
+            </button>
 
-    <p class="mag-text ng">
-        <span class="ng-icon">⚠</span>
-        <strong>大声で話す・騒ぐ</strong><br>
-        聖域は静寂を大切にする場所。会話は控えめにし、周囲の祈りを尊重したい。
-        <span class="label-en">
-            Sacred areas value silence. Keep conversations quiet and respect the prayers of others.
-        </span>
-    </p>
+            <!-- 4. まとめ -->
+            <button type="button" class="glass-card menu-card" data-modal="modal-4">
+                <div class="menu-text">
+                    <span class="menu-jp"><span class="num">④</span> まとめ</span>
+                    <span class="menu-en">Summary</span>
+                </div>
+                <span class="arrow-icon">›</span>
+            </button>
+        </main>
 
-    <p class="mag-text ng">
-        <span class="ng-icon">⚠</span>
-        <strong>撮影禁止エリアでの写真撮影</strong><br>
-        本殿・本堂周辺は撮影禁止のことが多い。看板や案内を必ず確認する。
-        <span class="label-en">
-            Many shrine and temple precincts forbid photography near the main hall.
-            Always check signs and instructions before taking pictures.
-        </span>
-    </p>
+        <!-- 3. ホームに戻るボタン -->
+        <footer class="footer-nav">
+            <button type="button" class="glass-card btn-back-home">
+                ホームへ戻る
+                <span class="label-en">Back Home</span>
+            </button>
+        </footer>
 
-    <p class="mag-text ng">
-        <span class="ng-icon">⚠</span>
-        <strong>無断で建物や仏像に触れる</strong><br>
-        文化財が多く、触れることで劣化を招く。特に仏像は絶対に触れない。
-        <span class="label-en">
-            Many structures and statues are cultural properties. Touching them can cause deterioration.
-            Never touch Buddhist statues, as they are objects of worship.
-        </span>
-    </p>
+    </div>
 
-    <!-- ② 神社だけの NG 行動 -->
-    <h3 class="ng-title">
-        <span>注意</span> ② 神社だけの NG 行動
-        <span class="label-en">NG Behaviors Specific to Shinto Shrines</span>
-    </h3>
+    <!-- ==========================================
+         モーダル①：まず始めに
+         ========================================== -->
+    <div id="modal-intro" class="modal-overlay">
+        <div class="glass-card modal-content">
+            <div class="modal-header">
+                <div>
+                    <h2 class="modal-title">まず始めに</h2>
+                    <span class="modal-title-en">Introduction — Why Understanding NG Behaviors Matters</span>
+                </div>
+                <button type="button" class="modal-close" aria-label="閉じる">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="info-item">
+                    <p class="ng-desc-jp">
+                        神社や寺院は、長い歴史の中で人々の祈りが積み重なってきた特別な場所である。
+                        そのため、参拝者が知らず知らずのうちに「やってはいけない行動」をしてしまうと、
+                        その場の空気を乱すだけでなく、他の参拝者の祈りを妨げてしまうこともある。
+                    </p>
+                    <p class="ng-desc-en">
+                        Shrines and temples are sacred places where countless prayers have accumulated over centuries.
+                        When visitors unknowingly engage in prohibited behaviors, it can disturb the atmosphere and disrupt the prayers of others.
+                    </p>
+                </div>
+            </div>
+            <button type="button" class="modal-close-bottom">閉じる / Close</button>
+        </div>
+    </div>
 
-    <p class="mag-text ng">
-        <span class="ng-icon">⚠</span>
-        <strong>鳥居の前で一礼しない</strong><br>
-        鳥居は神域の入口。くぐる前後の一礼は最低限の礼儀。
-        <span class="label-en">
-            The torii marks the entrance to the sacred domain. Bowing before and after passing through is basic etiquette.
-        </span>
-    </p>
+    <!-- ==========================================
+         モーダル②：① 神社・寺院 共通の NG 行動
+         ========================================== -->
+    <div id="modal-1" class="modal-overlay">
+        <div class="glass-card modal-content">
+            <div class="modal-header">
+                <div>
+                    <h2 class="modal-title">① 神社・寺院 共通の NG 行動</h2>
+                    <span class="modal-title-en">Common NG Behaviors at Shrines and Temples</span>
+                </div>
+                <button type="button" class="modal-close" aria-label="閉じる">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="ng-item">
+                    <h3 class="ng-title">⚠ 参道の真ん中を歩く</h3>
+                    <p class="ng-desc-jp">参道の中央は「正中」と呼ばれ、神仏が通る道とされる。参拝者は端を歩くのが基本。</p>
+                    <p class="ng-desc-en">The center of the approach path, called “seichū,” is considered the route of deities. Visitors should walk along the sides as a sign of respect.</p>
+                </div>
 
-    <p class="mag-text ng">
-        <span class="ng-icon">⚠</span>
-        <strong>賽銭を投げるように入れる</strong><br>
-        賽銭は「投げる」ものではなく「そっと入れる」もの。音を立てるのは無作法。
-        <span class="label-en">
-            Offerings should be placed gently, not thrown. Making loud noises is considered disrespectful.
-        </span>
-    </p>
+                <div class="ng-item">
+                    <h3 class="ng-title">⚠ 大声で話す・騒ぐ</h3>
+                    <p class="ng-desc-jp">聖域は静寂を大切にする場所。会話は控えめにし、周囲の祈りを尊重したい。</p>
+                    <p class="ng-desc-en">Sacred areas value silence. Keep conversations quiet and respect the prayers of others.</p>
+                </div>
 
-    <p class="mag-text ng">
-        <span class="ng-icon">⚠</span>
-        <strong>拍手の仕方が乱暴</strong><br>
-        二礼二拍手一礼は丁寧に。強く叩きすぎるのは場の空気を乱す。
-        <span class="label-en">
-            The ritual of “two bows, two claps, one bow” should be performed gently.
-            Excessively loud claps disturb the atmosphere.
-        </span>
-    </p>
+                <div class="ng-item">
+                    <h3 class="ng-title">⚠ 撮影禁止エリアでの写真撮影</h3>
+                    <p class="ng-desc-jp">本殿・本堂周辺は撮影禁止のことが多い。看板や案内を必ず確認する。</p>
+                    <p class="ng-desc-en">Many shrine and temple precincts forbid photography near the main hall. Always check signs and instructions before taking pictures.</p>
+                </div>
 
-    <!-- ③ 寺院だけの NG 行動 -->
-    <h3 class="ng-title">
-        <span>注意</span> ③ 寺院だけの NG 行動
-        <span class="label-en">NG Behaviors Specific to Buddhist Temples</span>
-    </h3>
+                <div class="ng-item">
+                    <h3 class="ng-title">⚠ 無断で建物や仏像に触れる</h3>
+                    <p class="ng-desc-jp">文化財が多く、触れることで劣化を招く。特に仏像は絶対に触れない。</p>
+                    <p class="ng-desc-en">Many structures and statues are cultural properties. Touching them can cause deterioration. Never touch Buddhist statues, as they are objects of worship.</p>
+                </div>
+            </div>
+            <button type="button" class="modal-close-bottom">閉じる / Close</button>
+        </div>
+    </div>
 
-    <p class="mag-text ng">
-        <span class="ng-icon">⚠</span>
-        <strong>合掌せずに手を叩く</strong><br>
-        寺院では拍手はしない。静かに合掌し、一礼するのが基本。
-        <span class="label-en">
-            Clapping is not practiced at temples. Visitors should quietly place their hands together and bow.
-        </span>
-    </p>
+    <!-- ==========================================
+         モーダル③：② 神社だけの NG 行動
+         ========================================== -->
+    <div id="modal-2" class="modal-overlay">
+        <div class="glass-card modal-content">
+            <div class="modal-header">
+                <div>
+                    <h2 class="modal-title">② 神社だけの NG 行動</h2>
+                    <span class="modal-title-en">NG Behaviors Specific to Shinto Shrines</span>
+                </div>
+                <button type="button" class="modal-close" aria-label="閉じる">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="ng-item">
+                    <h3 class="ng-title">⚠ 鳥居の前で一礼しない</h3>
+                    <p class="ng-desc-jp">鳥居は神域の入口。くぐる前後の一礼は最低限の礼儀。</p>
+                    <p class="ng-desc-en">The torii marks the entrance to the sacred domain. Bowing before and after passing through is basic etiquette.</p>
+                </div>
 
-    <p class="mag-text ng">
-        <span class="ng-icon">⚠</span>
-        <strong>線香の火を口で吹き消す</strong><br>
-        仏前で息を吹きかけるのは無作法。手であおいで消す。
-        <span class="label-en">
-            Blowing air toward the Buddha is considered improper. Fan the flame gently with your hand instead.
-        </span>
-    </p>
+                <div class="ng-item">
+                    <h3 class="ng-title">⚠ 賽銭を投げるように入れる</h3>
+                    <p class="ng-desc-jp">賽銭は「投げる」ものではなく「そっと入れる」もの。音を立てるのは無作法。</p>
+                    <p class="ng-desc-en">Offerings should be placed gently, not thrown. Making loud noises is considered disrespectful.</p>
+                </div>
 
-    <p class="mag-text ng">
-        <span class="ng-icon">⚠</span>
-        <strong>仏像の前でポーズを取って写真撮影</strong><br>
-        仏像は信仰の対象。観光地ではない。撮影禁止の場所も多い。
-        <span class="label-en">
-            Buddhist statues are objects of devotion, not tourist attractions.
-            Many temples prohibit photography in these areas.
-        </span>
-    </p>
+                <div class="ng-item">
+                    <h3 class="ng-title">⚠ 拍手の仕方が乱暴</h3>
+                    <p class="ng-desc-jp">二礼二拍手一礼は丁寧に。強く叩きすぎるのは場の空気を乱す。</p>
+                    <p class="ng-desc-en">The ritual of “two bows, two claps, one bow” should be performed gently. Excessively loud claps disturb the atmosphere.</p>
+                </div>
+            </div>
+            <button type="button" class="modal-close-bottom">閉じる / Close</button>
+        </div>
+    </div>
 
-</section>
+    <!-- ==========================================
+         モーダル④：③ 寺院だけの NG 行動
+         ========================================== -->
+    <div id="modal-3" class="modal-overlay">
+        <div class="glass-card modal-content">
+            <div class="modal-header">
+                <div>
+                    <h2 class="modal-title">③ 寺院だけの NG 行動</h2>
+                    <span class="modal-title-en">NG Behaviors Specific to Buddhist Temples</span>
+                </div>
+                <button type="button" class="modal-close" aria-label="閉じる">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="ng-item">
+                    <h3 class="ng-title">⚠ 合掌せずに手を叩く</h3>
+                    <p class="ng-desc-jp">寺院では拍手はしない。静かに合掌し、一礼するのが基本。</p>
+                    <p class="ng-desc-en">Clapping is not practiced at temples. Visitors should quietly place their hands together and bow.</p>
+                </div>
 
-<div class="mag-article">
-    <h3 class="ng-title">
-        <span>注意</span> まとめ
-        <span class="label-en">Summary</span>
-    </h3>
+                <div class="ng-item">
+                    <h3 class="ng-title">⚠ 線香の火を口で吹き消す</h3>
+                    <p class="ng-desc-jp">仏前で息を吹きかけるのは無作法。手であおいで消す。</p>
+                    <p class="ng-desc-en">Blowing air toward the Buddha is considered improper. Fan the flame gently with your hand instead.</p>
+                </div>
 
-    <p class="mag-text ng">
-        <span class="ng-icon">⚠</span>
-        神社や寺院での NG 行動は、単なるルールではなく、
-        「その場を尊重し、祈りの空気を守るための心遣い」である。
-        正しい作法を知ることで、巡礼の旅はより深く、豊かなものになる。
-        <span class="label-en">
-            NG behaviors at shrines and temples are not merely rules.
-            They are expressions of respect—ways to preserve the sacred atmosphere and honor the prayers of others.
-            By learning proper etiquette, your pilgrimage journey becomes deeper, more meaningful, and more fulfilling.
-        </span>
-    </p>
-    <button class="btn-back-home">ホーム
-            <div class="label-en">Back Home</div>
-        </button>
-</div>
+                <div class="ng-item">
+                    <h3 class="ng-title">⚠ 仏像の前でポーズを取って写真撮影</h3>
+                    <p class="ng-desc-jp">仏像は信仰の対象。観光地ではない。撮影禁止の場所も多い。</p>
+                 </div>
+            </div>
+            <button type="button" class="modal-close-bottom">閉じる / Close</button>
+        </div>
+    </div>
 
+    <!-- ==========================================
+         モーダル⑤：④ まとめ
+         ========================================== -->
+    <div id="modal-4" class="modal-overlay">
+        <div class="glass-card modal-content">
+            <div class="modal-header">
+                <div>
+                    <h2 class="modal-title">④ まとめ</h2>
+                    <span class="modal-title-en">Summary</span>
+                </div>
+                <button type="button" class="modal-close" aria-label="閉じる">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="info-item">
+                    <p class="ng-desc-jp">
+                        神社や寺院での NG 行動は、単なるルールではなく、
+                        「その場を尊重し、祈りの空気を守るための心遣い」である。
+                        正しい作法を知ることで、巡礼の旅はより深く、豊かなものになる。
+                    </p>
+                    <p class="ng-desc-en">
+                        NG behaviors at shrines and temples are not merely rules.
+                        They are expressions of respect—ways to preserve the sacred atmosphere and honor the prayers of others.
+                        By learning proper etiquette, your pilgrimage journey becomes deeper, more meaningful, and more fulfilling.
+                    </p>
+                </div>
+            </div>
+            <button type="button" class="modal-close-bottom">閉じる / Close</button>
+        </div>
+    </div>
+
+<script src="manner.js"></script>
 </body>
 
 </html>
