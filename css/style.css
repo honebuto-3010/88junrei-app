@@ -1,0 +1,538 @@
+@charset "utf-8";
+
+/* 横スクロール防止 */
+html, body { overflow-x: hidden; }
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background-image: url(../images/istockphoto-2227618858-612x612.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* ===========================
+   PC用ヘッダー（ハンバーガー）
+   =========================== */
+.mobile-header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 10;
+}
+
+.mobile-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    /* 黒ガラス化 */
+    background: rgba(133, 4, 4, 0.35);      /* 半透明の黒 */
+    backdrop-filter: blur(6px);           /* ガラス感を出す */
+    -webkit-backdrop-filter: blur(6px);   /* iOS対応 */
+
+    /* 白文字 */
+    color: rgba(249, 248, 248, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+.mobile-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* ハンバーガー */
+.hamburger {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 4px;
+    background: #fff;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 10px; }
+.hamburger span:nth-child(3) { top: 20px; }
+
+/* PC用メニュー（ハンバーガー展開） */
+.menu-content.pc-nav {
+    display: none;
+    position: fixed;
+    top: 80px;
+    right: 0;
+    width: 220px;
+    background: #ffffff;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    padding: 0;
+    z-index: 9999;
+}
+
+.menu-content.pc-nav a {
+    display: block;
+    padding: 14px 18px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    background: #fff;
+    cursor: pointer;
+}
+
+/* ===========================
+   スマホ専用 下部ナビ
+   =========================== */
+.mobile-bottom-nav {
+    display: none; /* PCでは非表示 */
+}
+
+@media (max-width: 768px) {
+
+    /* PC用ハンバーガーを消す */
+    .hamburger { display: none; }
+
+    /* PC用メニューを消す */
+    .pc-nav { display: none !important; }
+
+    /* スマホ用ナビを表示 */
+    .mobile-bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        height: 90px;
+        background: rgba(0,0,0,0.55);
+        backdrop-filter: blur(8px);
+
+        justify-content: space-around;
+        align-items: center;
+
+        border-top: 1px solid rgba(255,255,255,0.10);
+        z-index: 9999;
+    }
+    
+
+    .mobile-bottom-nav a {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        height: 60px;
+        font-size: 14px;
+        color: rgba(255,255,255,0.95);
+        text-decoration: none;
+
+        border-right: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .mobile-bottom-nav a:last-child {
+        border-right: none;
+    }
+    .mobile-bottom-nav .label-en {
+        font-size: 0.7rem;     /* ← 英語だけ小さく */
+        white-space: normal;   /* ← 折り返し可能に */
+        line-height: 1.2;
+        color: rgba(255,255,255,0.85); /* ← 視認性UP */
+    }
+    /* 背景曼荼羅をスマホで美しく */
+    body {
+        background-size: 780px;      /* ← スマホ専用拡大 */
+        background-position: center;
+    }
+}
+
+/* ===========================
+   ヒーロー写真
+   =========================== */
+.hero-photo {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+}
+
+.hero-image {
+    width: 100%;
+    height: calc(70vh - 80px);
+    filter: contrast(1.15) brightness(0.95);
+    position: relative;
+}
+
+.hero-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #0d111a;
+    opacity: 0.12;
+    pointer-events: none;
+}
+
+.washi-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(0.5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-title {
+    margin-left: 24px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: 'Yuji Syuku', serif;
+    font-size: 1.4rem;
+    line-height: 1.8;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.95);
+    filter: contrast(1.15) brightness(1.05);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+}
+
+/* ===========================
+   地図
+   =========================== */
+.map-section {
+    padding: 2rem 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    background: transparent;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #0d111a;
+    opacity: 0.18;
+    pointer-events: none;
+}
+
+.map-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(40%) brightness(1.05);
+}
+
+.map-title {
+    color: rgba(255,255,255,0.92);
+}
+
+@media (min-width: 768px) {
+    .map-container { height: 340px; }
+}
+
+.menu-content a,
+.mobile-bottom-nav a {
+    display: flex;
+    flex-direction: column; /* ← 日本語 → 英語を縦並びにする */
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.6rem 0;
+    color: rgba(255,255,255,0.95); /* 日本語は強めの白 */
+}
+
+.map-title {
+    writing-mode: horizontal-tb; /* ← これが決定打 */
+    text-orientation: mixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label-en {
+    writing-mode: horizontal-tb;
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.65); /* 英語は淡い白で控えめ */
+}
+
+/* ===========================
+   iPad Pro 専用レスポンシブ
+   1024px〜1366px（縦・横両対応）
+=========================== */
+@media (min-width: 1024px) and (max-width: 1366px) {
+
+    /* PC用ハンバーガーを非表示 */
+    .hamburger {
+        display: none !important;
+    }
+
+    /* PC用メニューを非表示 */
+    .pc-nav {
+        display: none !important;
+    }
+
+    /* スマホ用下部ナビを強制表示 */
+    .mobile-bottom-nav {
+        display: flex !important;
+        height: 90px;
+    }
+
+    /* ヒーロー写真の高さ調整（iPad Proは縦が長いので） */
+    .hero-photo {
+        height: 60vh;
+    }
+
+    .hero-image {
+        height: calc(60vh - 80px);
+    }
+
+    /* タイトル位置の微調整（iPad Proだと中央がズレる） */
+    .hero-title {
+        left: 20%;
+        font-size: 1.6rem;
+    }
+
+    /* 地図の高さ調整 */
+    .map-container {
+        height: 420px;
+    }
+}
+
+/* ===========================
+   iPad Pro 横向き専用（1366px）
+   スマホUIを使いつつ横向き補正
+=========================== */
+@media (orientation: landscape) and (min-width: 1024px) and (max-width: 1366px) {
+
+    /* PC用UIを完全に無効化 */
+    .hamburger {
+        display: none !important;
+    }
+    .pc-nav {
+        display: none !important;
+    }
+
+    /* スマホ下部ナビを強制表示 */
+    .mobile-bottom-nav {
+        display: flex !important;
+        height: 85px;
+        padding-bottom: env(safe-area-inset-bottom); /* iPadの下部余白対策 */
+    }
+
+    /* ヒーロー写真の高さ調整（横向きは縦が短い） */
+    .hero-photo {
+        height: 55vh;
+    }
+    .hero-image {
+        height: calc(55vh - 80px);
+    }
+
+    /* タイトル位置補正（横向きは中央がズレる） */
+    .hero-title {
+        left: 18%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.5rem;
+        letter-spacing: 0.18em;
+    }
+
+    /* 地図の高さを横向きに最適化 */
+    .map-container {
+        height: 360px;
+    }
+
+    /* 下部ナビの英語ラベルの折り返し調整 */
+    .mobile-bottom-nav .label-en {
+        font-size: 0.75rem;
+        line-height: 1.1;
+        white-space: normal;
+    }
+}
+
+/* ===========================
+   フルスクリーン地図モーダル
+   =========================== */
+
+.fullscreen-map {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 60px;
+    z-index: 99999;
+    animation: modalFadeIn 0.25s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: scale(0.96); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.map-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 18px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.45);
+    color: rgba(255,255,255,0.95);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    cursor: pointer;
+    z-index: 100000;
+    text-align: center;
+}
+
+.map-open-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 20px;
+    background: rgba(0,0,0,0.35);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    text-align: center;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    cursor: pointer;
+}
+
+.label-en {
+    display: block;
+    text-align: center;
+    font-size: 0.75em;
+    opacity: 0.85;
+}
+
+/* 常時表示の地図は非表示にする */
+.map-section {
+    display: none;
+}
+
+.map-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    opacity: 0.9;
+    stroke: #ffffff;
+    fill: none;
+}
+
+/* =================================================
+   ホーム画面 ブラッシュアップ（3つの微調整ポイント）
+   ================================================= */
+
+/* 1. 縦書きキャッチコピーの視認性アップ（上品な影＋微光） */
+.hero-title {
+    text-shadow: 
+        0 2px 10px rgba(0, 0, 0, 0.55),
+        0 0 20px rgba(0, 0, 0, 0.35) !important;
+    letter-spacing: 0.12em; /* 縦書きの文字間を少し広げて品格を出す */
+}
+
+/* 2. 左上の「八十八」アイコンの位置と存在感の調整 */
+.mobile-header {
+    padding: 16px !important; /* 画面の端やステータスバーとの余白を確保 */
+    box-sizing: border-box;
+}
+
+.mobile-icon {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 213, 79, 0.5); /* ほんのり金色の縁取り */
+}
+
+/* 3. 下部ナビゲーション（5項目が窮屈に見えないよう均等配置＆余白調整） */
+.mobile-bottom-nav {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important; /* 5つを厳密に均等幅に */
+    align-items: center;
+    padding: 10px 4px !important;
+    background: rgba(10, 10, 10, 0.82) !important; /* 黒ガラスを少し濃くして文字をくっきり */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    box-sizing: border-box;
+}
+
+.mobile-bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4px 2px !important;
+    font-size: 0.85rem !important; /* 右端の「参拝マナー」がはみ出さない最適サイズ */
+    white-space: nowrap; /* 意図しない改行を防止 */
+    gap: 3px;
+}
+
+.mobile-bottom-nav a .label-en {
+    font-size: 0.68rem !important;
+    opacity: 0.78;
+    letter-spacing: 0.02em;
+}
+
+/* タップした時のフィードバック（押し心地の良さ） */
+.mobile-bottom-nav a:active {
+    transform: scale(0.95);
+    color: #ffd54f;
+}
+
+/* 下部ナビの各項目の上に小さな金色の菱形アクセントを添える */
+.mobile-bottom-nav a::before {
+    content: "❖";
+    font-size: 0.7rem;
+    color: #ffd54f;
+    opacity: 0.85;
+    margin-bottom: 2px;
+}

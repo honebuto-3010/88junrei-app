@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>八栗寺</title>
+    <link rel="stylesheet" href="css/kagawa.css">
+    <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- 1. ヘッダーブロック（札所番号・寺名） -->
+        <header class="glass-card header-card">
+            <p class="temple-number">八十五番札所 <span class="en-sub">Temple No. 85</span></p>
+            <h1 class="temple-title">
+                <ruby>
+                    五剣山・八栗寺
+                    <rt>ごけんざん・やくりじ</rt>
+                </ruby>
+                <span class="title-en">Gokensan Yakuriji Temple</span>
+            </h1>
+        </header>
+
+        <!-- 2. 基本属性ブロック（宗派・御本尊・御朱印） -->
+        <section class="glass-card basic-info-card">
+            <div class="info-row">
+                <span class="label">宗派 <small>Sect</small></span>
+                <div class="value">
+                    真言宗・大覚寺派
+                    <span class="value-en">Shingon Buddhism (Daikakuji School)</span>
+                </div>
+            </div>
+
+            <div class="info-row">
+                <span class="label">御本尊 <small>Principal Deity</small></span>
+                <div class="value">
+                    聖観世音菩薩
+                    <span class="value-en">Shō Kannon (Sacred Avalokiteśvara)</span>
+                </div>
+            </div>
+
+            <div class="info-row">
+                <span class="label">御朱印 <small>Goshuin</small></span>
+                <div class="value">
+                    通常御朱印あり
+                    <span class="value-en">Available</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 現在地・住所ブロック -->
+        <section class="glass-card location-card">
+            <div class="current-distance">
+                📍 現在地から 約 -- km <span class="en-sub">(From current location)</span>
+            </div>
+            <div class="address-box">
+                <span class="label">住所 <small>Address</small></span>
+                <p class="value">
+                    香川県高松市牟礼町牟礼3416
+                    <span class="value-en">3416 Mure Town, Takamatsu City, Kagawa</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. Google Map ボタン -->
+        <a href="https://maps.google.com/?q=香川県 八栗寺" target="_blank" rel="noopener noreferrer" class="map-button">
+            Open Google Maps
+        </a>
+
+        <!-- 5. 参拝・施設情報（2カラム変則グリッド） -->
+        <section class="details-grid">
+            <!-- 左列（2ブロック） -->
+            <div class="grid-col-left">
+                <!-- 最重要：納経時間 -->
+                <div class="glass-card detail-box highlight-card">
+                    <span class="label">納経時間 <small>Nokyo Hours</small></span>
+                    <p class="value-large">8:00〜17:00</p>
+                </div>
+
+                <!-- 納経場所 -->
+                <div class="glass-card detail-box">
+                    <span class="label">納経場所 <small>Nokyo Office</small></span>
+                    <p class="value">
+                        聖天堂横
+                        <span class="value-en">Beside the Shōtendō Hall</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 右列（3ブロック） -->
+            <div class="grid-col-right">
+                <!-- 開門時間 -->
+                <div class="glass-card detail-box">
+                    <span class="label">開門時間 <small>Gate Hours</small></span>
+                    <p class="value">7:00〜17:00</p>
+                </div>
+
+                <!-- 駐車場情報 -->
+                <div class="glass-card detail-box">
+                    <span class="label">駐車場情報 <small>Parking</small></span>
+                    <p class="value">
+                        あり（400台・無料・八栗ケーブル登山口駅駐車場）
+                        <span class="value-en">400 spaces / Free (Use the Yakuri Cable Car base station parking)</span>
+                    </p>
+                </div>
+
+                <!-- 宿坊 -->
+                <div class="glass-card detail-box">
+                    <span class="label">宿坊 <small>Temple Lodging</small></span>
+                    <p class="value">
+                        なし
+                        <span class="value-en">None</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. ナビゲーションボタン -->
+        <nav class="back-buttons">
+            <button type="button" class="glass-btn btn-back-home">
+                ホームに戻る
+                <span class="label-en">Back Home</span>
+            </button>
+            <button type="button" class="glass-btn btn-back-list">
+                一覧に戻る
+                <span class="label-en">Back to List</span>
+            </button>
+        </nav>
+
+    </div>
+    <script src="distance.js"></script>
+</body>
+
+</html>

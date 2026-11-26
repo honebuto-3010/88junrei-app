@@ -1,0 +1,272 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #0d111a;
+    background-image: url(../images/istockphoto-2227618858-612x612.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    /* 最新スマホのノッチ・下部バー対応 */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: max(24px, env(safe-area-inset-bottom));
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+/* 一覧全体の背景（黒ガラス） */
+.temple-grid-wrapper {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.18);
+    padding: 20px 14px 36px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    min-height: 100vh;
+}
+
+/* 2列グリッド（スマホ最適化・固定幅を解除して画面にフィット） */
+.temple-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    padding: 8px 4px 20px;
+    justify-items: stretch;
+}
+
+/* アイコン＋英語ラベルの外枠 */
+.temple-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    cursor: pointer;
+    padding: 14px 10px 12px;
+    border-radius: 14px;
+    /* 上部の明るい背景でも黒ガラスが綺麗に見える濃さに調整 */
+    background: rgba(12, 15, 22, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    transition: transform 0.16s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.temple-wrapper:hover {
+    background: rgba(18, 22, 32, 0.62);
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.temple-wrapper:active {
+    transform: scale(0.97);
+}
+
+/* アイコン本体（日本語だけ） */
+.temple-icon {
+    position: relative;
+    width: 104px;
+    height: 104px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    overflow: hidden;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.08),
+        rgba(255, 255, 255, 0.01)
+    );
+    transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.temple-wrapper:hover .temple-icon {
+    border-color: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* 黒ガラスラベル（日本語・縦書き印章） */
+.goshuin-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: rgba(0, 0, 0, 0.62);
+    padding: 7px 8px;
+    border-radius: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    white-space: nowrap;
+}
+
+/* 日本語（縦書き） */
+.goshuin-left,
+.goshuin-right {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: 'Yuji Syuku', serif;
+    line-height: 1.45;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.96);
+}
+
+.goshuin-left {
+    font-size: 0.95rem;
+}
+
+.goshuin-right {
+    font-size: 0.82rem;
+    color: rgba(230, 194, 122, 0.88); /* 札所番号にほのかな金色で視認性アップ */
+}
+
+/* 英語ラベル（アイコンの下に別枠・全カードで幅統一） */
+.temple-en {
+    background: rgba(0, 0, 0, 0.58);
+    padding: 6px 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    width: 100%;
+    text-align: center;
+}
+
+/* 英語（横書き・長い寺名でも枠からはみ出さない） */
+.temple-en-name {
+    width: 100%;
+    font-size: clamp(0.75rem, 3.3vw, 0.88rem);
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.92);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.temple-en-number {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.65);
+    white-space: nowrap;
+}
+
+/* 戻るボタン */
+.btn-back-home {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    min-height: 52px;
+    margin: 14px auto 0;
+    padding: 10px 24px;
+    background: rgba(12, 15, 22, 0.72);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-back-home:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.55);
+    transform: translateY(-2px);
+}
+
+.btn-back-home:active {
+    transform: scale(0.97);
+}
+
+.btn-back-home .label-en {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.75);
+    margin-top: 2px;
+}
+
+/* 県別テーマは黒世界観に統一 */
+.ai-theme,
+.kagawa-theme,
+.ehime-theme,
+.kochi-theme {
+    background-color: transparent;
+}
+
+/* =========================================
+   レスポンシブ調整（小型スマホ 〜 タブレット・PC）
+   ========================================= */
+
+/* コンパクトスマホ（360px以下） */
+@media (max-width: 360px) {
+    .temple-grid {
+        gap: 10px;
+    }
+
+    .temple-wrapper {
+        padding: 12px 8px 10px;
+    }
+
+    .temple-icon {
+        width: 92px;
+        height: 92px;
+    }
+}
+
+/* タブレット・大型画面（600px以上）：3列グリッドに拡張 */
+@media (min-width: 600px) {
+    .temple-grid-wrapper {
+        padding: 32px 28px 48px;
+    }
+
+    .temple-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .temple-wrapper {
+        padding: 18px 14px 14px;
+    }
+
+    .temple-icon {
+        width: 112px;
+        height: 112px;
+    }
+
+    .temple-en-name {
+        font-size: 0.9rem;
+    }
+}
+
+/* PC画面（840px以上）：4列グリッドで一覧性アップ */
+@media (min-width: 840px) {
+    .temple-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 22px;
+    }
+}
+
