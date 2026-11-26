@@ -1,12 +1,12 @@
-const CACHE_NAME = "v3"; // 更新を反映させるため v2 → v3 に変更
+const CACHE_NAME = "v4"; // 更新を反映させるため v2 → v3 に変更
 
 // オフラインでも使えるようにキャッシュするファイル一覧
 // ※ここにあるファイルが1つでも見つからないとエラーになるため、実際に存在するファイルだけを書いてください
 const STATIC_FILES = [
   "./",
   "index.html",
-  "tokushima.css",
-  "manner.css",          // ← 新しく作ったマナー用CSS（ファイル名が違う場合は書き換えてください）
+  "css/tokushima.css",
+  "css/manner.css",          // ← 新しく作ったマナー用CSS（ファイル名が違う場合は書き換えてください）
   "distance.js",         // ← 距離自動計算JS（フォルダ内なら "js/distance.js" に変更）
   "tokushima-icon.html",
   "kagawa-icon.html",
@@ -14,8 +14,10 @@ const STATIC_FILES = [
   "kochi-icon.html",
   "manner.html",
   "manifest.json",
-  "overview-map-01.png",
-  "photo-1620374476350-b7c1eabcc131.jpg"
+  "192-icon.png",
+  "512-icon.png",
+  "istockphoto-2227618858-612x612.jpg",
+  "overview-map-01.png"
 ];
 
 // インストール時にキャッシュ登録（万が一1つ欠けていても全体が止まらない安全設計）
