@@ -440,3 +440,29 @@ body {
         font-size: 1.5rem;
     }
 }
+
+/* =========================================
+   iPhone SE（狭い画面）での重なり防止・強制均等化
+   ========================================= */
+@media screen and (max-width: 480px) {
+    .back-buttons {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        column-gap: 10px !important; /* 横の隙間を確実に空ける */
+        row-gap: 10px !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 0 !important;
+    }
+
+    .back-buttons button,
+    .back-buttons .glass-btn {
+        width: auto !important; /* 100%ではなくGridの枠に自動フィットさせる */
+        min-width: 0 !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 12px 6px !important; /* 文字が折り返さないよう左右余白を少し詰める */
+        font-size: 0.9rem !important;
+    }
+}
