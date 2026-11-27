@@ -14,6 +14,7 @@ const STATIC_FILES = [
   "kochi-icon.html",
   "manner.html",
   "manifest.json",
+  "180-icon.png",
   "192-icon.png",
   "512-icon.png",
   "istockphoto-2227618858-612x612.jpg",
