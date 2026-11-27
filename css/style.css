@@ -129,56 +129,74 @@ body {
     /* PC用メニューを消す */
     .pc-nav { display: none !important; }
 
-    /* スマホ用ナビを表示 */
+    /* スマホ用ナビを表示（フローティング黒ガラス仕様） */
     .mobile-bottom-nav {
-        display: flex;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-
-        height: 90px;
-        background: rgba(0,0,0,0.55);
-        backdrop-filter: blur(8px);
-
-        justify-content: space-around;
+        display: grid !important;
+        grid-template-columns: repeat(5, 1fr) !important;
         align-items: center;
+        position: fixed;
+        bottom: max(12px, env(safe-area-inset-bottom)) !important;
+        left: 12px !important;
+        right: 12px !important;
+        width: auto !important;
+        height: auto !important; /* 固定の90pxを解除して中身に合わせる */
+        padding: 10px 4px !important;
 
-        border-top: 1px solid rgba(255,255,255,0.10);
+        background: rgba(10, 15, 22, 0.72) !important;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.22) !important;
+        border-radius: 16px !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
         z-index: 9999;
+        box-sizing: border-box;
     }
-    
 
     .mobile-bottom-nav a {
-        flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
-        height: 60px;
-        font-size: 14px;
-        color: rgba(255,255,255,0.95);
+        text-align: center;
+        height: auto !important;
+        padding: 4px 2px !important;
+        font-size: 0.84rem !important;
+        color: rgba(255, 255, 255, 0.95);
         text-decoration: none;
-
-        border-right: 1px solid rgba(255,255,255,0.12);
+        white-space: nowrap;
+        gap: 2px;
+        border-right: 1px solid rgba(255, 255, 255, 0.12);
+        transition: background 0.2s ease, transform 0.15s ease;
     }
 
     .mobile-bottom-nav a:last-child {
         border-right: none;
+        color: #ffe89e; /* 参拝マナーをほんのりゴールドに */
     }
+
+    .mobile-bottom-nav a::before {
+        content: "❖";
+        font-size: 0.7rem;
+        color: #ffd54f;
+        opacity: 0.85;
+        margin-bottom: 2px;
+    }
+
+    .mobile-bottom-nav a:active {
+        transform: scale(0.95);
+        color: #ffd54f;
+    }
+
     .mobile-bottom-nav .label-en {
-        font-size: 0.7rem;     /* ← 英語だけ小さく */
-        white-space: normal;   /* ← 折り返し可能に */
+        font-size: 0.66rem !important;
+        white-space: nowrap;
         line-height: 1.2;
-        color: rgba(255,255,255,0.85); /* ← 視認性UP */
+        color: rgba(255, 255, 255, 0.78);
     }
-    /* 背景曼荼羅をスマホで美しく */
-    body {
-        background-size: 780px;      /* ← スマホ専用拡大 */
-        background-position: center;
-    }
+
+    /* ※ここにあった古い「背景曼荼羅用 body { background-size: 780px; }」は削除しました */
 }
+
 
 /* ===========================
    ヒーロー写真
