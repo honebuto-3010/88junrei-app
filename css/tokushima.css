@@ -329,7 +329,9 @@ body {
 /* 左右のボタン共通：個別指定をリセットしてサイズを完全統一 */
 .back-buttons .glass-btn,
 .back-buttons .btn-back-home,
-.back-buttons .btn-back-list {
+.back-buttons .btn-back-list,
+.back-buttons .btn-prev-temple,
+.back-buttons .btn-next-temple {
     width: 100%;
     height: auto;
     min-height: 58px;      /* お好みの高さに調整してください（例: 52px〜64px） */
