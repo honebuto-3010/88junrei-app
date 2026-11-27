@@ -3,18 +3,21 @@
    全体背景・ベース設定
    =========================== */
 body {
-    margin: 0;
-    padding: 1.5rem 1rem;
-    background-image: url(../istockphoto-2227618858-612x612.jpg);
-    background-size: cover;
-    background-position: center;
+    background-color: #296d9c;
+    background-image: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23123c5c' fill-opacity='0.48' d='M0,224L80,213.3C160,203,320,181,480,186.7C640,192,800,224,960,229.3C1120,235,1280,213,1360,202.7L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z'%3E%3C/path%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23215f8a' fill-opacity='0.40' d='M0,160L120,176C240,192,480,224,720,213.3C960,203,1200,149,1320,122.7L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z'%3E%3C/path%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 1440 320' preserveAspectRatio='none'%3E%3Cpath fill='%23ffffff' fill-opacity='0.18' d='M0,128L96,112C192,96,384,64,576,85.3C768,107,960,181,1152,197.3C1344,213,1440,171,1440,171L1440,320L1344,320C1152,320,960,320,768,320C576,320,384,320,192,320L0,320Z'%3E%3C/path%3E%3C/svg%3E"),
+        radial-gradient(circle at 85% 12%, rgba(255, 232, 178, 0.65) 0%, rgba(168, 218, 245, 0.35) 40%, transparent 68%),
+        radial-gradient(circle at 20% 40%, rgba(92, 179, 230, 0.70) 0%, transparent 62%),
+        linear-gradient(165deg, #4da1d4 0%, #2d76a8 48%, #164466 100%);
+    
     background-repeat: no-repeat;
+    background-position: bottom center, bottom center, bottom center, center, center, center;
+    background-size: 100% 48%, 100% 60%, 100% 72%, cover, cover, cover;
     background-attachment: fixed;
-    min-height: 100vh;
-    font-family: "Noto Serif JP", serif;
-    color: rgba(255, 255, 255, 0.95);
-    box-sizing: border-box;
 }
+
 
 .container {
     max-width: 600px; /* PCで見たときも広がりすぎない最適な幅 */
