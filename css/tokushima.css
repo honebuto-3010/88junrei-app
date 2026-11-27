@@ -265,7 +265,9 @@ body {
 }
 
 .btn-back-home,
-.btn-back-list {
+.btn-back-list,
+.btn-prev-temple,
+.btn-next-temple {
     flex: 1 1 0;
     padding: 14px 10px;
     background: rgba(0, 0, 0, 0.60);
@@ -286,7 +288,9 @@ body {
 }
 
 .btn-back-home::after,
-.btn-back-list::after {
+.btn-back-list::after,
+.btn-prev-temple::after,
+.btn-next-temple::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -296,12 +300,16 @@ body {
 }
 
 .btn-back-home:hover,
-.btn-back-list:hover {
+.btn-back-list:hover,
+.btn-prev-temple:hover,
+.btn-next-temple:hover {
     background: rgba(255, 255, 255, 0.22);
 }
 
 .btn-back-home .label-en,
-.btn-back-list .label-en {
+.btn-back-list .label-en,
+.btn-prev-temple .label-en,
+.btn-next-temple .label-en {
     display: block;
     font-family: "Inter", sans-serif;
     font-size: 0.78rem;
