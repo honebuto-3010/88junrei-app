@@ -473,6 +473,125 @@ body {
     stroke: #ffffff;
     fill: none;
 }
+/* ===========================
+   巡礼地図モーダル内の解説エリア
+   =========================== */
+.fullscreen-map {
+    overflow-y: auto; /* 小さい画面でも下部までスクロール可能に */
+    padding-bottom: max(32px, env(safe-area-inset-bottom));
+}
+
+.map-guide-area {
+    width: calc(100% - 32px);
+    max-width: 640px;
+    margin: 14px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.dojo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.dojo-card {
+    background: rgba(0, 0, 0, 0.52);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 12px;
+    padding: 10px 12px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-sizing: border-box;
+}
+
+.dojo-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+/* 地図のピンと色を合わせた丸ドット */
+.dojo-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+.dot-awa    { background-color: #2b7bba; } /* 徳島：青 */
+.dot-tosa   { background-color: #b84b9e; } /* 高知：ピンク・紫 */
+.dot-iyo    { background-color: #d97236; } /* 愛媛：オレンジ */
+.dot-sanuki { background-color: #4a9e6d; } /* 香川：緑 */
+
+.dojo-pref {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.dojo-pref small {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.70);
+    margin-left: 2px;
+}
+
+.dojo-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #ffd54f;
+    margin-bottom: 3px;
+}
+
+.dojo-en {
+    font-size: 0.70rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.75);
+    margin-left: 3px;
+}
+
+.dojo-desc {
+    margin: 0;
+    font-size: 0.74rem;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* 一番下の全体スケールバー */
+.map-summary-bar {
+    background: rgba(0, 0, 0, 0.52);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    padding: 9px 12px;
+    text-align: center;
+    font-size: 0.80rem;
+    color: rgba(255, 255, 255, 0.92);
+    letter-spacing: 0.04em;
+}
+
+.summary-divider {
+    margin: 0 8px;
+    opacity: 0.4;
+}
+
+.dojo-desc-en {
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.62);
+    margin-top: 2px;
+    line-height: 1.25;
+}
+
+.map-summary-bar small {
+    font-family: "Inter", sans-serif;
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.72);
+    margin-left: 3px;
+}
 
 /* =================================================
    ホーム画面 ブラッシュアップ（3つの微調整ポイント）
